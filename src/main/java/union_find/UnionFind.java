@@ -6,7 +6,7 @@ package union_find;
 public interface UnionFind {
     public void union(int p, int q);
     public boolean connected(int p, int q);
-    // what the hell does find do?
+    // returns color of the p
     public int find(int p);
     public int count();
 }
