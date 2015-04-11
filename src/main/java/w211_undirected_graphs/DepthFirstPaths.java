@@ -3,6 +3,9 @@ package w211_undirected_graphs;
 import w121_stacks_and_queues.LinkedListStack;
 import w121_stacks_and_queues.Stack;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 /**
  * Created by sandro on 3/20/15.
  */

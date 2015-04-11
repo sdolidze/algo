@@ -1,4 +1,4 @@
-package w211_undirected_graphs;
+package w212_directed_graphs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Created by sandro on 3/20/15.
  */
-public class Graph {
-    // probably linked list is more efficient
+public class Digraph {
     private List<Integer>[] vertices;
+    private int edges;
 
-    public Graph(int numVertices) {
+    public Digraph(int numVertices) {
         vertices = new List[numVertices];
         for (int i = 0; i < vertices.length; i++) {
             vertices[i] = new ArrayList<>();
@@ -19,7 +19,17 @@ public class Graph {
 
     public void addEdge(int from, int to) {
         vertices[from].add(to);
-        vertices[to].add(from);
+        edges++;
+    }
+
+    public Digraph reverse() {
+        Digraph reversed = new Digraph(vertices());
+        for (int vertex = 0; vertex < vertices.length; vertex++) {
+            for (int neighbor: adjacent(vertex)) {
+                reversed.addEdge(neighbor, vertex);
+            }
+        }
+        return reversed;
     }
 
     public Iterable<Integer> adjacent(int vertex) {
@@ -31,6 +41,6 @@ public class Graph {
     }
 
     public int edges() {
-        throw new UnsupportedOperationException("not yet implemented");
+        return edges;
     }
 }

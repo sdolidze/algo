@@ -44,10 +44,9 @@ public class GraphsPrime {
 
         while (!queue.isEmpty()) {
             T cur = queue.dequeue();
-            consumer.accept(cur); // everyone including start
+            consumer.accept(cur);
             for (T neighbor: graph.adjacent(cur)) {
                 if (!visited.contains(neighbor)) {
-//                    consumer.accept(neighbor); // exclude start
                     visited.add(neighbor);
                     queue.enqueue(neighbor);
                 }
