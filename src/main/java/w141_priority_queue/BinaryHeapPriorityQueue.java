@@ -4,8 +4,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * todo: fix this and make it work
- * Created by sandro on 2/16/15.
  */
 public class BinaryHeapPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T> {
     private T[] arr;
