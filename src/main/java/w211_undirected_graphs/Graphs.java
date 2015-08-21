@@ -7,7 +7,7 @@ public class Graphs {
     public static int degree(Graph g, int v) {
         // g.adjacent(v).size()
         int degree = 0;
-        for (int _: g.adjacent(v)) {
+        for (int unused: g.adjacent(v)) {
             degree++;
         }
         return degree;
